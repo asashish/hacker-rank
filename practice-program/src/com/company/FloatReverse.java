@@ -1,18 +1,44 @@
 package com.company;
 
-//this code for convert float number into reverse
-
 public class FloatReverse {
 
     public static void main(String[] args) {
-        float aFloat = 553.3456f;
-        String text = Float.toString(Math.abs(aFloat));
-        char[] textArray = new char[text.length()+1];
-        textArray = text.toCharArray();
-        String revString = "";
-        for (char c : textArray) {
-            revString = c+revString;
+        FloatReverse fr = new FloatReverse();
+        float aDecimal = 1234.123f;
+        System.out.println(aDecimal);
+        int count=0;
+        while (aDecimal % 1 != 0){
+            aDecimal = aDecimal*10;
+            count++;
         }
-        System.out.println("the given number reverse "+revString);
+        fr.reverse(count, aDecimal);
+    }
+
+    public float reverse(int count, float value){
+        FloatReverse fr1 = new FloatReverse();
+        int number = (int) value;
+        float reverseNum = 0;
+        int remainder  = 0;
+        int totalLength = 0;
+        while (number != 0){
+            remainder = number%10;
+            reverseNum = (reverseNum*10)+remainder;
+            number = number/10;
+            totalLength++;
+        }
+        System.out.println(reverseNum);
+        fr1.convertIntoDecimal((totalLength-count), reverseNum);
+        return reverseNum;
+    }
+
+    public float convertIntoDecimal(int count, float number){
+        int divValue = 1;
+        while(count != 0){
+            divValue = divValue*10;
+            count --;
+        }
+        float temp = number/divValue;
+        System.out.println(temp);
+        return temp;
     }
 }
