@@ -1,5 +1,7 @@
 package com.company;
 
+//how to reverse a decimal number without converting into strings
+
 public class FloatReverse {
 
     public static void main(String[] args) {
