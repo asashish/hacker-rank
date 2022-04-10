@@ -1,4 +1,4 @@
-package linklist;
+package com.company.linklist;
 
 import java.util.ArrayList;
 import java.util.List;
