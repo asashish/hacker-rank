@@ -2,7 +2,6 @@ package com.company.linklist;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class LinkList<T> {
     private Node<T> last;
@@ -15,29 +14,6 @@ public class LinkList<T> {
         Node<T> newNode = new Node<>(value, last);
         last = newNode;
         size++;
-    }
-
-    public static class Node<T> {
-        T element;
-        Node<T> next;
-
-        public Node(T element, Node<T> node) {
-            this.element = element;
-            this.next = node;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Node)) return false;
-            Node<?> node = (Node<?>) o;
-            return element.equals(node.element) && next.equals(node.next);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(element, next);
-        }
     }
 
     public List<T> print(Node<T> startNode){
